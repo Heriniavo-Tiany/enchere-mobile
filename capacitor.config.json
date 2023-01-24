@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "Enchere - Mobile",
+	"webDir": "build",
+	"bundledWebRuntime": false
+}
