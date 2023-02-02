@@ -32,6 +32,8 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Recharger from "./pages/Recharger";
 import Upload from "./pages/Upload";
+import ListEnchere from './pages/ListEnchere';
+import NewEnchere from './pages/NewEnchere';
 
 setupIonicReact();
 
@@ -59,6 +61,14 @@ const App: React.FC = () => {
 
             <Route exact path="/login">
               <Login />
+            </Route>
+
+            <Route exact path="/liste">
+              <ListEnchere />
+            </Route>
+
+            <Route exact path="/new">
+              <NewEnchere />
             </Route>
 
             <Route exact path="/">
