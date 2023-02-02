@@ -35,9 +35,7 @@ const NewEnchere: React.FC = () =>{
 
     }, []);
 
-    function image() {
-        history.push(`/upload`);
-    }
+    
 
     const newEnchere = async () =>{
         const params = {
@@ -59,6 +57,8 @@ const NewEnchere: React.FC = () =>{
             
         }
     }
+
+
     return(
         <>
         <IonPage>
@@ -105,7 +105,7 @@ const NewEnchere: React.FC = () =>{
                 </IonItem>
 
                 <IonItem>
-                    <IonButton onClick{() => image()}>Ajouter une image</IonButton >
+                    <IonButton  >Ajouter une image</IonButton >
                 </IonItem>   
                 <IonButton className="btn-simple" color="primary" onClick={newEnchere}>Ok, Inserer</IonButton>
 
