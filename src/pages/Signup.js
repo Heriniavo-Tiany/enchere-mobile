@@ -8,22 +8,40 @@ import { Action } from '../components/Action';
 import { Wave } from '../components/Wave';
 import { useEffect, useState } from 'react';
 import { validateForm } from '../data/utils';
-import { useParams } from 'react-router';
+import {useHistory, useParams} from 'react-router';
+import axios from "axios";
+import {API_URL} from "../config";
 
 const Signup = () => {
+    const history = useHistory();
 
     const params = useParams();
     const fields = useSignupFields();
     const [ errors, setErrors ] = useState(false);
 
-    const createAccount = () => {
+    const createAccount = async () => {
 
         const errors = validateForm(fields);
         setErrors(errors);
 
         if (!errors.length) {
+            const params = {
+                nom: fields[0].input.state.value,
+                email: fields[1].input.state.value,
+                motDePasse: fields[3].input.state.value,
+                contact: fields[2].input.state.value
+            };
 
-            //  Submit your form here
+            try {
+                const response = await axios.post(`${API_URL}/utilisateurs`, {}, {params});
+                if (response.status === 200) {
+                    console.log(response.data);
+                    // history.push(`/login`);
+                }
+            } catch (error) {
+                console.log(error);
+            }
+
         }
     }
 
