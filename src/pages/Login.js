@@ -60,6 +60,7 @@ const Login = () => {
                     }
 
                     if (response.data.length === 1) {
+                        sessionStorage.setItem("id", response.data[0].id)
                         history.push(`/rencherir`);
                     } else {
                         history.push(`/login?e=0`);

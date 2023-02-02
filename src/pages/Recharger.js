@@ -22,7 +22,8 @@ function Recharger() {
 
     const recharger = async () => {
         const params = {
-            compte: compte
+            compte: compte,
+            idutilisateur: sessionStorage.getItem("id")
         };
 
         try {
