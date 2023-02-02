@@ -31,6 +31,7 @@ import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Recharger from "./pages/Recharger";
+import Upload from "./pages/Upload";
 
 setupIonicReact();
 
@@ -67,6 +68,11 @@ const App: React.FC = () => {
             <Route
                 path="/recharger"
                 render={(props) => <Recharger/>}
+            />
+
+            <Route
+                path="/upload"
+                render={(props) => <Upload/>}
             />
 
 
