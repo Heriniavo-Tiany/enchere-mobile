@@ -25,6 +25,7 @@ import './theme/variables.css';
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import Recharger from "./pages/Recharger";
 
 setupIonicReact();
 
@@ -57,6 +58,11 @@ const App: React.FC = () => {
             <Route exact path="/">
               <Redirect to="/home" />
             </Route>
+
+            <Route
+                path="/recharger"
+                render={(props) => <Recharger/>}
+            />
 
 
           </IonRouterOutlet>
