@@ -18,7 +18,7 @@ export function usePhotoGallery() {
         } else {
             base64Data = await base64FromPath(photo.webPath!);
         }
-        console.log(base64Data);
+
         const savedFile = await Filesystem.writeFile({
             path: fileName,
             data: base64Data,
@@ -63,7 +63,6 @@ export function usePhotoGallery() {
         }
         else if(id!=null && id>0) {
             removeItem(id);
-            console.log(photos.length);
         }
         else {
             removeAllItem();
@@ -74,7 +73,6 @@ export function usePhotoGallery() {
 
     function removeItem(index: any) {
         const arraytemp = [...photos];
-        console.log(JSON.stringify(arraytemp));
         arraytemp.splice(index, 1)
         setPhotos(arraytemp);
     }
@@ -122,6 +120,6 @@ export function ajoutPhoto(id: any, base64image: any) {
         body: base64image
     }
     ).then((res) => {
-        console.log(res);
+
     });
 }
