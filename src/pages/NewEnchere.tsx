@@ -22,7 +22,10 @@ const NewEnchere: React.FC = () =>{
 
     const [categories, setCat] = useState([]);
     const [error, setError] = useState(null);
-    setDateheure(date+" "+heure);
+    useEffect(() => {
+        setDateheure(date + " " + heure);
+    }, [date, heure]);
+
 
 
     useEffect(() => {
@@ -58,6 +61,9 @@ const NewEnchere: React.FC = () =>{
         }
     }
 
+    function Ajoutimage() {
+        history.push(`/upload`);
+    }
 
     return(
         <>
@@ -105,7 +111,7 @@ const NewEnchere: React.FC = () =>{
                 </IonItem>
 
                 <IonItem>
-                    <IonButton  >Ajouter une image</IonButton >
+                    <IonButton onClick={() => Ajoutimage()}>Ajouter une image</IonButton >
                 </IonItem>   
                 <IonButton className="btn-simple" color="primary" onClick={newEnchere}>Ok, Inserer</IonButton>
 
