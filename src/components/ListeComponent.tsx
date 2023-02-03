@@ -1,6 +1,5 @@
 import {
     IonIcon,
-    IonLabel,
     IonItem,
     IonButton,
     IonCard,
