@@ -31,6 +31,7 @@ const Upload: React.FC = () => {
                     <>
                         {
                             photos.map((value: any, id: number) => {
+                                console.log(photos);
                                 return (
                                     <>
                                         <p key={id}><IonButton onClick={() => takePhoto(id)}><IonIcon

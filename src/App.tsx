@@ -34,6 +34,7 @@ import Recharger from "./pages/Recharger";
 import Upload from "./pages/Upload";
 import ListEnchere from './pages/ListEnchere';
 import NewEnchere from './pages/NewEnchere';
+import NewProduit from './components/NewProduit';
 
 setupIonicReact();
 
@@ -67,7 +68,11 @@ const App: React.FC = () => {
               <ListEnchere />
             </Route>
 
-            <Route exact path="/new/:id">
+            <Route exact path="/produit/:idcategorie">
+              <NewProduit />
+            </Route>
+
+            <Route exact path="/new/1">
               <NewEnchere />
             </Route>
 
