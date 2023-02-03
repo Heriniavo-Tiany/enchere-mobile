@@ -74,7 +74,8 @@ export const useLoginFields = () => {
                 
                 props: {
                     type: "email",
-                    placeholder: "joe@bloggs.com"
+                    placeholder: "joe@bloggs.com",
+                    value: "jean@gmail.com"
                 },
                 state: useFormInput("")
             }
@@ -87,7 +88,8 @@ export const useLoginFields = () => {
                 
                 props: {
                     type: "password",
-                    placeholder: "*******"
+                    placeholder: "*******",
+                    value: "jean"
                 },
                 state: useFormInput("")
             }

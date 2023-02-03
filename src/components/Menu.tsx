@@ -27,6 +27,42 @@ const appPages: AppPage[] = [
     url: '/page/Inbox',
     iosIcon: mailOutline,
     mdIcon: mailSharp
+  },
+  {
+    title: 'Home',
+    url: '/home',
+    iosIcon: mailOutline,
+    mdIcon: mailSharp
+  },
+  {
+    title: 'Login',
+    url: '/login',
+    iosIcon: mailOutline,
+    mdIcon: mailSharp
+  },
+  {
+    title: 'Inscription',
+    url: '/signup',
+    iosIcon: mailOutline,
+    mdIcon: mailSharp
+  },
+  {
+    title: 'Liste',
+    url: '/liste',
+    iosIcon: mailOutline,
+    mdIcon: mailSharp
+  },
+  {
+    title: 'New Enchere',
+    url: '/new',
+    iosIcon: mailOutline,
+    mdIcon: mailSharp
+  },
+  {
+    title: 'Recharger',
+    url: '/recharger',
+    iosIcon: mailOutline,
+    mdIcon: mailSharp
   }
 ];
 
