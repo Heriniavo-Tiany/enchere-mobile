@@ -53,7 +53,7 @@ const Login = () => {
                     const data = response.data;
 
                     if (response.data.code === 202) {
-                        history.push(`/liste`);
+                        history.push(`/encheres`);
                     }
                     if (response.data.code === 404) {
                         history.push(`/login`);
