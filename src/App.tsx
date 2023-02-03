@@ -67,7 +67,7 @@ const App: React.FC = () => {
               <ListEnchere />
             </Route>
 
-            <Route exact path="/new">
+            <Route exact path="/new/:id">
               <NewEnchere />
             </Route>
 
