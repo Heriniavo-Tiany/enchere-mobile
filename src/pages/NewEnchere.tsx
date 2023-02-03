@@ -1,9 +1,10 @@
-import { IonButton, IonContent, IonInput, IonItem, IonItemOption, IonLabel, IonPage, IonSelect, IonSelectOption, IonTitle, IonToolbar } from "@ionic/react";
+import { IonButton, IonContent, IonIcon, IonInput, IonItem, IonItemOption, IonLabel, IonPage, IonSelect, IonSelectOption, IonTitle, IonToolbar } from "@ionic/react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useHistory } from 'react-router-dom';
 import {useParams} from 'react-router';
 import Upload from "./Upload";
+import { addCircleSharp } from "ionicons/icons";
 
 
 const NewEnchere: React.FC = () =>{
@@ -23,7 +24,10 @@ const NewEnchere: React.FC = () =>{
 
     const [categories, setCat] = useState([]);
     const [error, setError] = useState(null);
-    setDateheure(date+" "+heure);
+
+    useEffect(() => {
+        setDateheure(date + " " + heure);
+    }, [date, heure]);
 
 
     useEffect(() => {
@@ -59,6 +63,9 @@ const NewEnchere: React.FC = () =>{
         }
     }
 
+    function redirect(idcategorie:string){
+        history.push('/produit/'+idcategorie);
+    }
 
     return(
         <>
@@ -84,9 +91,9 @@ const NewEnchere: React.FC = () =>{
                 </IonItem>
                 <IonItem>
                     <IonLabel>Produit : </IonLabel>
-                    <IonSelect name="produit" onIonChange={(e: any) => setidproduit(e.target.value)}>
-                        <IonSelectOption value={1}>Produit 1</IonSelectOption>
-                    </IonSelect>
+                    <IonItem>
+                        <IonIcon icon={addCircleSharp}  onClick={()=> redirect(idcategorie)} ></IonIcon>
+                    </IonItem>
                 </IonItem>
 
                 <IonItem>
@@ -104,10 +111,7 @@ const NewEnchere: React.FC = () =>{
                     <IonLabel>Duree :</IonLabel>
                     <IonInput type="time" name="duree" clearInput={true} onIonChange={(e: any) => setduree(e.target.value)}></IonInput>
                 </IonItem>
-
-                <IonItem>
-                    <IonButton  >Ajouter une image</IonButton >
-                </IonItem>   
+  
                 <IonButton className="btn-simple" color="primary" onClick={newEnchere}>Ok, Inserer</IonButton>
 
             </IonContent>
