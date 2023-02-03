@@ -11,8 +11,9 @@ import {
 } from '@ionic/react';
 
 import { useLocation } from 'react-router-dom';
-import { archiveOutline, archiveSharp, bookmarkOutline, heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
+import { bookmarkOutline, mailOutline, mailSharp } from 'ionicons/icons';
 import './Menu.css';
+import { Button } from 'reactstrap';
 
 interface AppPage {
   url: string;
@@ -24,7 +25,7 @@ interface AppPage {
 const appPages: AppPage[] = [
   {
     title: 'Inbox',
-    url: '/page/Inbox',
+    url: '/rechargement',
     iosIcon: mailOutline,
     mdIcon: mailSharp
   },
@@ -57,12 +58,6 @@ const appPages: AppPage[] = [
     url: '/new',
     iosIcon: mailOutline,
     mdIcon: mailSharp
-  },
-  {
-    title: 'Recharger',
-    url: '/recharger',
-    iosIcon: mailOutline,
-    mdIcon: mailSharp
   }
 ];
 
@@ -87,6 +82,7 @@ const Menu: React.FC = () => {
               </IonMenuToggle>
             );
           })}
+          <Button onClick={() => window.location.replace("/recharger")}>Recharger</Button>
         </IonList>
 
         <IonList id="labels-list">

@@ -8,7 +8,7 @@ import {
     IonFooter,
     IonGrid,
     IonHeader,
-    IonIcon,
+    IonIcon, IonInput, IonLabel,
     IonPage,
     IonRouterLink,
     IonRow,
@@ -35,15 +35,15 @@ const Login = () => {
     const [errors, setErrors] = useState(false);
 
     const login = async () => {
-
+        console.log(email)
         const errors = validateForm(fields);
         setErrors(errors);
 
         if (!errors.length) {
 
             const params = {
-                email: fields[0].input.state.value,
-                mdp: fields[1].input.state.value,
+                email: email,
+                mdp: mdp,
             };
 
             try {
@@ -61,7 +61,7 @@ const Login = () => {
 
                     if (response.data.length === 1) {
                         sessionStorage.setItem("id", response.data[0].id)
-                        history.push(`/rencherir`);
+                        history.push(`/liste`);
                     } else {
                         history.push(`/login?e=0`);
                     }
@@ -76,6 +76,9 @@ const Login = () => {
         }
     }
 
+    const [email, setEmail] = useState("jean@gmail.com");
+    const [mdp, setMdp] = useState("jean");
+
     useEffect(() => {
 
         return () => {
@@ -84,6 +87,11 @@ const Login = () => {
             setErrors(false);
         }
     }, [params]);
+
+    const error = errors && errors.filter(e => e.id === fields[0].id)[0];
+
+    const errorMessage = error && errors.filter(e => e.id === fields[0].id)[0].message;
+
 
     return (
         <IonPage className={styles.loginPage}>
@@ -113,10 +121,25 @@ const Login = () => {
                     <IonRow className="ion-margin-top ion-padding-top">
                         <IonCol size="12">
 
-                            {fields.map(field => {
+                            {/*{fields.map(field => {*/}
+                            {/*    return <CustomField field={field} errors={errors} />;*/}
+                            {/*})}*/}
 
-                                return <CustomField field={field} errors={errors}/>;
-                            })}
+                            <div className="CustomField_field__9GAVY">
+                                <IonLabel className="">
+                                    Email
+                                    { error && <p className="animate__animated animate__bounceIn">{ errorMessage }</p> }
+                                </IonLabel>
+                                <IonInput className="CustomField_customInput__J2tlM" value={email}  onIonChange={(e) => setEmail(e.target.value)} type="text" />
+                            </div>
+
+                            <div className="CustomField_field__9GAVY">
+                                <IonLabel className="">
+                                    Mot de Passe
+                                    { error && <p className="animate__animated animate__bounceIn">{ errorMessage }</p> }
+                                </IonLabel>
+                                <IonInput className="CustomField_customInput__J2tlM" value={mdp} onIonChange={(e) => setMdp(e.target.value)} type="password"  />
+                            </div>
 
                             <IonButton className="custom-button" expand="block" onClick={login}>Login</IonButton>
                         </IonCol>

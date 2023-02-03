@@ -71,19 +71,26 @@ const App: React.FC = () => {
               <NewEnchere />
             </Route>
 
+            <Route exact path="/new">
+              <NewEnchere />
+            </Route>
+
+            <Route exact path="/rechargement">
+              <Redirect to="/recharger" />
+              {/*{window.location.replace(/recharger)}*/}
+            </Route>
+
             <Route exact path="/">
               <Redirect to="/home" />
             </Route>
 
-            <Route
-                path="/recharger"
-                render={(props) => <Recharger/>}
-            />
+            <Route exact path="/recharger">
+              <Recharger />
+            </Route>
 
-            <Route
-                path="/upload"
-                render={(props) => <Upload/>}
-            />
+            <Route exact path="/upload">
+              <Upload />
+            </Route>
 
 
           </IonRouterOutlet>

@@ -69,7 +69,7 @@ export const useLoginFields = () => {
         {
             id: "email",
             label: "Email",
-            required: true,
+            required: false,
             input: {
                 props: {
                     type: "email",
@@ -82,7 +82,7 @@ export const useLoginFields = () => {
         {
             id: "password",
             label: "Mot de Passe",
-            required: true,
+            required: false,
             input: {
                 props: {
                     type: "password",
