@@ -71,13 +71,12 @@ export const useLoginFields = () => {
             label: "Email",
             required: true,
             input: {
-                
                 props: {
                     type: "email",
                     placeholder: "joe@bloggs.com",
                     value: "jean@gmail.com"
                 },
-                state: useFormInput("")
+                state: useFormInput("jean@gmail.com")
             }
         },
         {
@@ -85,13 +84,12 @@ export const useLoginFields = () => {
             label: "Mot de Passe",
             required: true,
             input: {
-                
                 props: {
                     type: "password",
                     placeholder: "*******",
                     value: "jean"
                 },
-                state: useFormInput("")
+                state: useFormInput("Jean")
             }
         }
     ];
